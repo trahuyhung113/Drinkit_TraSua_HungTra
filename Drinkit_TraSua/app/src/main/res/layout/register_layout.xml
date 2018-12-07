@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#666">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên đăng nhập"
+            android:textSize="30dp"
+            android:inputType="text"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
+            app:met_baseColor="#FFF"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="#FFF"
+            app:met_singleLineEllipsis="true"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Địa chỉ"
+            android:textSize="30dp"
+            android:inputType="text"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
+            app:met_baseColor="#FFF"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="#FFF"
+            app:met_singleLineEllipsis="true"/>
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_birthdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngày sinh"
+            android:textSize="30dp"
+            android:inputType="date"
+            android:digits="1234567890-"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
+            app:met_baseColor="#FFF"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="#FFF"
+            app:met_singleLineEllipsis="true"/>
+    </LinearLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#39796b"
+            android:textColor="#FFF"
+            android:text="Đăng kí"
+            android:textSize="18dp"/>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_fav"
+            android:icon="@drawable/ic_favorite_white_24dp"
+            android:title="Favorites" />
+
+        <item
+            android:id="@+id/nav_show_order"
+            android:icon="@drawable/ic_card_travel_black_24dp"
+            android:title="Your Orders" />
+
+        <item
+            android:id="@+id/nav_nearby_store"
+            android:icon="@drawable/ic_store_black_24dp"
+            android:title="Drinkit Location" />
+
+        <item
+            android:id="@+id/nav_simsimi"
+            android:icon="@drawable/ic_chat_black_24dp"
+            android:title="Simsimi Chat" />
+    </group>
+
+    <item android:title="Account">
+        <menu>
+
+            <item
+                android:id="@+id/nav_support"
+                android:icon="@drawable/ic_help_black_24dp"
+                android:title="Support" />
+
+            <item
+                android:id="@+id/nav_sign_out"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
+                android:title="Sign-out" />
+        </menu>
+    </item>
+
+</menu>

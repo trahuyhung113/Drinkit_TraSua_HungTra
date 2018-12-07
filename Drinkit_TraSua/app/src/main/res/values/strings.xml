@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Drinkit_TraSua</string>
+
+    <string name="facebook_app_id">328644634384360</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">0ce58e5cb2f6e256ae9780a2fa5a7099</string>
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="simsimi_api" translatable="false">b0f1ce7e-bc0f-4765-b3d5-d08b15e6d8af</string>
+</resources>

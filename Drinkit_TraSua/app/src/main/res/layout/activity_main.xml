@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgf1"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="190dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="270dp"
+                android:layout_height="110dp"
+                android:background="@drawable/lgdrinkit"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/txtSlogan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Muốn ngon hãy đến với Drinkit,\nchúng tôi sẽ cho bạn uống\nđầy đủ những hương vị ngon\nvà đậm tình yêu thương nhất."
+                android:textSize="20dp"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/utmplavour"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_margin="8dp"
+        android:id="@+id/btn_contibue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bodersignup"
+        android:textColor="#FFF"
+        android:text="Tiếp tục"
+        android:textSize="18dp"/>
+
+
+
+</RelativeLayout>

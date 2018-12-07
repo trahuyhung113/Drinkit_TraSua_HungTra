@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_marginTop="60dp">
+
+
+    <ImageView
+        android:id="@+id/slider_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/group1" />
+
+    <TextView
+        android:id="@+id/slider_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="EAT"
+        android:textColor="#FFF"
+        android:textSize="22sp"
+        android:fontFamily="@font/corbelb"
+        android:letterSpacing="0.1"/>
+
+    <TextView
+        android:id="@+id/slider_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:text="Ăn uống đầy đủ,
+cân bằng sẽ giúp sức khỏe,
+giảm rủi ro về bệnh tật hơn."
+        android:textColor="#CCC"
+        android:textAlignment="center"
+        android:textSize="18dp"
+        android:fontFamily="@font/arial"
+        android:letterSpacing="0.06"
+        android:lineSpacingMultiplier="1.35"
+        />
+
+</LinearLayout>
