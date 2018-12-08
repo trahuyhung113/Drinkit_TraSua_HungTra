@@ -19,7 +19,8 @@ public abstract class HungTraRoomDatabase extends RoomDatabase {
 
     public static HungTraRoomDatabase getInstance(Context context){
         if (instance == null)
-            instance = Room.databaseBuilder(context, HungTraRoomDatabase.class,"HungTra_DrinkShopDB")
+            instance = Room.databaseBuilder(context, HungTraRoomDatabase.class,
+                    "HungTra_DrinkShopDB")
                     .allowMainThreadQueries()
                     .build();
         return instance;

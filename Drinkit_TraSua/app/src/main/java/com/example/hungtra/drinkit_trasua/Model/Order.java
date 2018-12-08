@@ -8,7 +8,6 @@ public class Order {
 
     public Order() {
     }
-
     public long getOrderId() {
         return OrderId;
     }

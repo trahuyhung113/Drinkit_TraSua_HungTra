@@ -20,7 +20,8 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
         this.listener = listener;
     }
     @Override
-    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
+    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder,
+                          @NonNull RecyclerView.ViewHolder viewHolder1) {
         return true;
     }
 
@@ -31,8 +32,8 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
             listener.onSwiped(viewHolder,i, viewHolder.getAdapterPosition());
 
     }
-    //Ctrl+O
 
+    //Ctrl+O
     @Override
     public void clearView(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
 
@@ -66,7 +67,9 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
     }
 
     @Override
-    public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+    public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView,
+                            @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState,
+                            boolean isCurrentlyActive) {
 
         if (viewHolder instanceof FavoriteAdapter.FavoriteViewHolder){
             View foregroundView = ((FavoriteAdapter.FavoriteViewHolder)viewHolder).view_foreground;
@@ -80,7 +83,9 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
     }
 
     @Override
-    public void onChildDrawOver(@NonNull Canvas c, @NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+    public void onChildDrawOver(@NonNull Canvas c, @NonNull RecyclerView recyclerView,
+                                RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState,
+                                boolean isCurrentlyActive) {
 
 
         if (viewHolder instanceof FavoriteAdapter.FavoriteViewHolder){

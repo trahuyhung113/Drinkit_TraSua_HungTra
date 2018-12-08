@@ -107,7 +107,6 @@
                     android:textSize="20dp"
                     android:layout_marginLeft="15dp"/>
 
-
             </LinearLayout>
             <View
                 android:layout_width="match_parent"

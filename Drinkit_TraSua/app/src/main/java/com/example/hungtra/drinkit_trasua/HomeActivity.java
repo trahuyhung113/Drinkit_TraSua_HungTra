@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -31,23 +30,15 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 
 import com.example.hungtra.drinkit_trasua.Adapter.CategoryAdapter;
-import com.example.hungtra.drinkit_trasua.CartActivity;
 import com.example.hungtra.drinkit_trasua.Database.DataSource.CartRepository;
 import com.example.hungtra.drinkit_trasua.Database.DataSource.FavoriteRepository;
 import com.example.hungtra.drinkit_trasua.Database.Local.CartDataSource;
 import com.example.hungtra.drinkit_trasua.Database.Local.FavoriteDataSource;
 import com.example.hungtra.drinkit_trasua.Database.Local.HungTraRoomDatabase;
-import com.example.hungtra.drinkit_trasua.FavoriteListActivity;
-import com.example.hungtra.drinkit_trasua.MainActivity;
-import com.example.hungtra.drinkit_trasua.MapsActivity;
 import com.example.hungtra.drinkit_trasua.Model.Banner;
 import com.example.hungtra.drinkit_trasua.Model.Category;
 import com.example.hungtra.drinkit_trasua.Model.Drink;
-import com.example.hungtra.drinkit_trasua.R;
 import com.example.hungtra.drinkit_trasua.Retrofit.IDrinkShopAPI;
-import com.example.hungtra.drinkit_trasua.SearchActivity;
-import com.example.hungtra.drinkit_trasua.ShowOrderActivity;
-import com.example.hungtra.drinkit_trasua.SimsimiActivity;
 import com.example.hungtra.drinkit_trasua.Utils.Common;
 import com.example.hungtra.drinkit_trasua.Utils.ProgressRequestBody;
 import com.example.hungtra.drinkit_trasua.Utils.UploadCallBack;
@@ -61,7 +52,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
@@ -90,7 +80,6 @@ public class HomeActivity extends AppCompatActivity
 
     Uri selectedFileUrl;
 
-
     //Rxjava
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
@@ -105,7 +94,8 @@ public class HomeActivity extends AppCompatActivity
 
 
         lst_menu = (RecyclerView)findViewById(R.id.lst_menu);
-        lst_menu.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        lst_menu.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL,false));
         lst_menu.setHasFixedSize(true);
 
         sliderLayout = (SliderLayout)findViewById(R.id.slider);
@@ -229,8 +219,12 @@ public class HomeActivity extends AppCompatActivity
 
     private void initDB() {
         Common.hungTraRoomDatabase = HungTraRoomDatabase.getInstance(this);
-        Common.cartRepository = CartRepository.getInstance(CartDataSource.getInstance(Common.hungTraRoomDatabase.cartDAO()));
-        Common.favoriteRepository = FavoriteRepository.getInstance(FavoriteDataSource.getInstance(Common.hungTraRoomDatabase.favoriteDAO()));
+
+        Common.cartRepository = CartRepository.getInstance(CartDataSource
+                .getInstance(Common.hungTraRoomDatabase.cartDAO()));
+
+        Common.favoriteRepository = FavoriteRepository.getInstance(FavoriteDataSource
+                .getInstance(Common.hungTraRoomDatabase.favoriteDAO()));
     }
 
     private void getToppingList() {
@@ -434,6 +428,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(new Intent(HomeActivity.this,SupportActivity.class));
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

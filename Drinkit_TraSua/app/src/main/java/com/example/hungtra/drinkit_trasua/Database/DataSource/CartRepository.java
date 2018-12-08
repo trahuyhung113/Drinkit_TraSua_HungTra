@@ -9,7 +9,6 @@ import java.util.List;
 import io.reactivex.Flowable;
 
 public class CartRepository implements ICartDataSource {
-
     private ICartDataSource iCartDataSource;
     public CartRepository(ICartDataSource iCartDataSource){
         this.iCartDataSource = iCartDataSource;
@@ -30,7 +29,6 @@ public class CartRepository implements ICartDataSource {
     public Flowable<List<Cart>> getCartItemById(int cartItemId) {
         return iCartDataSource.getCartItemById(cartItemId);
     }
-
     @Override
     public int countCartItems() {
         return iCartDataSource.countCartItems();

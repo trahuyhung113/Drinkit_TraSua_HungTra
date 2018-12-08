@@ -103,8 +103,6 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     //Ctrl + O
-
-
     @Override
     protected void onStop() {
         compositeDisposable.clear();

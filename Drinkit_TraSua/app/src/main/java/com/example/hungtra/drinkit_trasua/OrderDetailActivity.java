@@ -37,7 +37,8 @@ public class OrderDetailActivity extends AppCompatActivity {
         txt_order_price.setText(new StringBuilder("$").append(Common.currentOrder.getOrderPrice()));
         txt_order_address.setText(Common.currentOrder.getOrderAddress());
         txt_order_comment.setText(Common.currentOrder.getOrderComment());
-        txt_order_status.setText(new StringBuilder("Order Status: ").append(Common.convertCodeToStatus(Common.currentOrder.getOrderStatus())));
+        txt_order_status.setText(new StringBuilder("Order Status: ")
+                .append(Common.convertCodeToStatus(Common.currentOrder.getOrderStatus())));
 
         displayOrderDetail();
     }

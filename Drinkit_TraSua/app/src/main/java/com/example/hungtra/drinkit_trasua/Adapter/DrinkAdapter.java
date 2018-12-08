@@ -52,7 +52,8 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final DrinkViewHolder drinkViewHolder, final int i) {
 
-        drinkViewHolder.txt_price.setText(new StringBuilder("$").append(drinkList.get(i).Price).toString());
+        drinkViewHolder.txt_price.setText(new StringBuilder("$")
+                .append(drinkList.get(i).Price).toString());
         drinkViewHolder.txt_drink_name.setText(drinkList.get(i).Name);
 
         drinkViewHolder.btn_add_to_cart.setOnClickListener(new View.OnClickListener() {
@@ -289,7 +290,8 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkViewHolder> {
         txt_ice.setText(new StringBuilder("Ice: ").append(Common.ice).append("%").toString());
         txt_sugar.setText(new StringBuilder("Sugar: ").append(Common.sugar).append("%").toString());
 
-        double price = (Double.parseDouble(drinkList.get(poss).Price)*Double.parseDouble(number)) + (Common.toppingPrice*Double.parseDouble(number));
+        double price = (Double.parseDouble(drinkList.get(poss).Price)*Double.parseDouble(number)) +
+                (Common.toppingPrice*Double.parseDouble(number));
 
         if (Common.sizeOfCup == 1)
             price+=0.5*Double.parseDouble(number);
@@ -308,11 +310,10 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkViewHolder> {
         builder.setNegativeButton("CONFIRM", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
                 dialogInterface.dismiss();
 
-                //Add to SQL
-                //Create cart item
+                //thêm vào SQL
+                //Tạo item Cart
                 try {
 
                     Cart cartItem = new Cart();
@@ -340,7 +341,6 @@ public class DrinkAdapter extends RecyclerView.Adapter<DrinkViewHolder> {
         builder.setView(itemView);
         builder.show();
     }
-
 
     @Override
     public int getItemCount() {

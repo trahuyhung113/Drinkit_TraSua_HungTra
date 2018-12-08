@@ -30,17 +30,17 @@ public class SliderAdapter extends PagerAdapter {
     };
 
     public String[] slider_heading = {
-            "Maxim HT",
-            "BILL GATES",
-            "MARK ZUCKERBERG",
-            "JACK MA",
+            "SUPPORT ADDRESS",
+            "DELETE ITEM CART",
+            "SIMSIMI CHAT",
+            "ORDER DETAIL",
     };
 
     public String[] slider_desc = {
-            "Ứng dụng hay"+"\nCác câu châm ngôn về cuộc sông"+"\ncủa những người nỗi tiếng",
-            "Từng học ở Harvard,"+"\nlà người giàu nhất thế giới,"+"\nông chủ của Microsoft." ,
-            "Ông chủ của Facebook,"+"\nNhân vật của năm năm 2010,"+"\nđạt được thành tựu AI.",
-            "Tên thật là Mã Vân,"+"\nSáng lập thương mại điện tử Alibaba"+"\nlà người giàu nhất Châu Á.",
+            "Facebook address"+"\nhttps://www.facebook.com/huy.hung.52438"+"\ncontact me if your want ",
+            "Swipe horizontal"+"\nYou will delete the drink in the cart"+"\ngood luck!" ,
+            "Time went by slowly"+"\nWelcome to Simsimi Chat"+"\nit is interesting",
+            "Clicked Your Order item"+"\nYou will see you order detail"+"\na great function",
     };
     @Override
     public int getCount() {

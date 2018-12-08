@@ -30,14 +30,15 @@ public class SupportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_support);
 
-        sliderVP = (ViewPager)findViewById(R.id.sliderVP);
+        sliderVP = (ViewPager) findViewById(R.id.sliderVP);
 
-        nextBtn = (Button)findViewById(R.id.nextBtn);
-        prevBtn = (Button)findViewById(R.id.prevBtn);
-        mDotLayout = (RelativeLayout)findViewById(R.id.mDotLayout);
+        nextBtn = (Button) findViewById(R.id.nextBtn);
+        prevBtn = (Button) findViewById(R.id.prevBtn);
+        mDotLayout = (RelativeLayout) findViewById(R.id.mDotLayout);
 
         sliderAdapter = new SliderAdapter(this);
         sliderVP.setAdapter(sliderAdapter);
+
         addDotsIndicator(0);
         sliderVP.addOnPageChangeListener(viewListener);
 
@@ -68,11 +69,9 @@ public class SupportActivity extends AppCompatActivity {
         for (int i =0; i<mDots.length; i++){
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226;"));
-            mDots[i].setTextSize(30);
+            mDots[i].setTextSize(35);
             mDots[i].setTextColor(getResources().getColor(R.color.colorTransparentWthite));
             mDotLayout.addView(mDots[i]);
-
-
 
         }
 
@@ -84,7 +83,6 @@ public class SupportActivity extends AppCompatActivity {
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
         }
 
         @Override
@@ -101,7 +99,7 @@ public class SupportActivity extends AppCompatActivity {
                 nextBtn.setText("NEXT");
                 prevBtn.setText("");
 
-            }else if (i == 3){
+            }else if (i == mDots.length){
                 nextBtn.setEnabled(true);
                 prevBtn.setEnabled(true);
                 prevBtn.setVisibility(View.VISIBLE);
@@ -125,4 +123,5 @@ public class SupportActivity extends AppCompatActivity {
 
         }
     };
+
 }

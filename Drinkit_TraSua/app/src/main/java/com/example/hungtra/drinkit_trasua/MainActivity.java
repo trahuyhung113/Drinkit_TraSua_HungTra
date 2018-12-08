@@ -75,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED)
             ActivityCompat.requestPermissions(this, new String[]{
                     Manifest.permission.READ_EXTERNAL_STORAGE
             },REQUEST_PERMISION);
@@ -203,12 +204,13 @@ public class MainActivity extends AppCompatActivity {
 
                                                             @Override
                                                             public void onFailure(Call<User> call, Throwable t) {
-                                                                Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(MainActivity.this, t.getMessage(),
+                                                                        Toast.LENGTH_SHORT).show();
                                                             }
                                                         });
 
                                             }else {
-                                                //else, need register
+                                                //nếu không sẽ phải đăng kí
                                                 alertDialog.dismiss();
                                                 showRegisterDialog(account.getPhoneNumber().toString());
                                             }

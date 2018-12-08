@@ -93,7 +93,8 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
             }
         });
 
-        ItemTouchHelper.SimpleCallback simpleCallback = new RecyclerItemTouchHelper(0,ItemTouchHelper.LEFT,this);
+        ItemTouchHelper.SimpleCallback simpleCallback = new
+                RecyclerItemTouchHelper(0,ItemTouchHelper.LEFT,this);
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(recycler_cart);
 
         loadCartItems();
@@ -179,7 +180,8 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
 
                     //Payment
                     DropInRequest dropInRequest = new DropInRequest().clientToken(token);
-                    startActivityForResult(dropInRequest.getIntent(CartActivity.this), PAYMENT_REQUEST_CODE);
+                    startActivityForResult(dropInRequest.getIntent(CartActivity.this),
+                            PAYMENT_REQUEST_CODE);
 
 
                 }
@@ -208,7 +210,9 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
                                                         orderComment,orderAddress,
                                                         "COD");
                                             else
-                                                Toast.makeText(CartActivity.this, "Order address can't null", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(CartActivity.this,
+                                                        "Order address can't null",
+                                                        Toast.LENGTH_SHORT).show();
 
                                         }
                                     })
@@ -265,7 +269,8 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
                     public void onResponse(Call<String> call, Response<String> response) {
                         if (response.body().toString().contains("Successful"))
                         {
-                            Toast.makeText(CartActivity.this, "Transaction successful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CartActivity.this, "Transaction successful",
+                                    Toast.LENGTH_SHORT).show();
 
                             //gửi oder
                             compositeDisposable.add(
@@ -282,7 +287,9 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
                                                                 orderComment,orderAddress,
                                                                 "Braintree");
                                                     else
-                                                        Toast.makeText(CartActivity.this, "Order address can't null", Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(CartActivity.this,
+                                                                "Order address can't null",
+                                                                Toast.LENGTH_SHORT).show();
 
                                                 }
                                             })
@@ -290,7 +297,8 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
                         }
                         else
                         {
-                            Toast.makeText(CartActivity.this, "Transaction failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CartActivity.this, "Transaction failed",
+                                    Toast.LENGTH_SHORT).show();
                         }
 
                         Log.d("HungTra_INFO",response.body());
@@ -303,15 +311,18 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
                 });
     }
 
-    private void sendOrderToServer(float sumPrice, List<Cart> carts, String orderComment, String orderAddress, String paymentMethod) {
+    private void sendOrderToServer(float sumPrice, List<Cart> carts, String orderComment,
+                                   String orderAddress, String paymentMethod) {
         if (carts.size() > 0){
             String orderDetail = new Gson().toJson(carts);
 
-            mService.submitOrder(sumPrice,orderDetail,orderComment,orderAddress,Common.currentUser.getPhone(),paymentMethod)
+            mService.submitOrder(sumPrice,orderDetail,orderComment,orderAddress,Common.currentUser
+                    .getPhone(),paymentMethod)
                     .enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {
-                            Toast.makeText(CartActivity.this, "Order Submit", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CartActivity.this, "Order Submit",
+                                    Toast.LENGTH_SHORT).show();
 
                             //xóa giỏ hàng
                             Common.cartRepository.emptyCart();
@@ -383,7 +394,8 @@ public class CartActivity extends AppCompatActivity implements RecyclerItemTouch
             //Xóa item từ Database
             Common.cartRepository.deleteCartItem(deletedItem);
 
-            Snackbar snackbar = Snackbar.make(rootLayout, new StringBuilder(name).append(" - Remove from Cart List").toString(),
+            Snackbar snackbar = Snackbar.make(rootLayout, new StringBuilder(name)
+                            .append(" - Remove from Cart List").toString(),
                     Snackbar.LENGTH_LONG);
             snackbar.setAction("UNDO", new View.OnClickListener() {
                 @Override

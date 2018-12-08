@@ -49,7 +49,8 @@ public class FavoriteListActivity extends AppCompatActivity implements RecyclerI
         recycler_fav.setLayoutManager(new LinearLayoutManager(this));
         recycler_fav.setHasFixedSize(true);
 
-        ItemTouchHelper.SimpleCallback simpleCallback = new RecyclerItemTouchHelper(0,ItemTouchHelper.LEFT,this);
+        ItemTouchHelper.SimpleCallback simpleCallback = new RecyclerItemTouchHelper(0,
+                ItemTouchHelper.LEFT,this);
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(recycler_fav);
 
         loadFavoritesItem();
@@ -100,7 +101,8 @@ public class FavoriteListActivity extends AppCompatActivity implements RecyclerI
             //Xóa item từ Database
             Common.favoriteRepository.delete(deletedItem);
 
-            Snackbar snackbar = Snackbar.make(rootLayout, new StringBuilder(name).append(" - Remove from Favorites List").toString(),
+            Snackbar snackbar = Snackbar.make(rootLayout, new StringBuilder(name)
+                            .append(" - Remove from Favorites List").toString(),
                     Snackbar.LENGTH_LONG);
             snackbar.setAction("UNDO", new View.OnClickListener() {
                 @Override

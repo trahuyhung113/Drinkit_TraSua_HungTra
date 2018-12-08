@@ -5,5 +5,4 @@ public class Category {
     public String Name;
     public String Link;
 
-
 }
